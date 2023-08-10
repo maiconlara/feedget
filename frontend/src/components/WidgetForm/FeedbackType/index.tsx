@@ -1,19 +1,37 @@
+import { Bug, Lightbulb, Sparkle } from "phosphor-react";
+import CloseButton from "../../CloseButton";
+import FeedbackTypeButton from "./FeedbackTypeButton";
+
 interface FeedbackTypeProps {
-  title: string;
-  image: JSX.Element;
   setFeedbackType: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-const FeedbackType = ({ title, image, setFeedbackType }: FeedbackTypeProps) => {
+const FeedbackType = ({ setFeedbackType }: FeedbackTypeProps) => {
   return (
-    <button
-      className="bg-zinc-800 rounded-lg py-5 w-24 flex-1 flex-col items-center border-2 border-transparent hover:border-brand-500 focus:border-brand-500 focus:outline-none"
-      type="button"
-      onClick={() => setFeedbackType(title)}
-    >
-      <div className="items-center flex flex-col text-brand-500">{image}</div>
-      <div className="items-center flex flex-col mt-2">{title}</div>
-    </button>
+    <>
+      <header>
+        <span className="text-xl leading-6">Deixe seu feedback</span>
+        <CloseButton />
+      </header>
+
+      <div className="flex py-8 gap-2 w-full">
+        <FeedbackTypeButton
+          title="Problema"
+          image={<Bug weight="bold" size={30} />}
+          setFeedbackType={setFeedbackType}
+        />
+        <FeedbackTypeButton
+          title="Ideia"
+          image={<Lightbulb weight="bold" size={30} />}
+          setFeedbackType={setFeedbackType}
+        />
+        <FeedbackTypeButton
+          title="Outro"
+          image={<Sparkle weight="bold" size={30} />}
+          setFeedbackType={setFeedbackType}
+        />
+      </div>
+    </>
   );
 };
 
