@@ -1,12 +1,19 @@
-
-
-
+import CloseButton from "../../CloseButton";
+import sucess from "../../../assets/success.svg";
 
 const FeedbackSuccess = () => {
+  return (
+    <>
+      <header>
+        <CloseButton />
+      </header>
 
-    return (
+      <div className="flex flex-col items-center py-10 w-[304px]">
+        <img src={sucess} alt="sucesso" className="w-12 h-12" />
+      </div>
 
-        <div> asdawdaw </div>
-    )    
-}
+      <span className="text-xl mt-8 ">Agradeçemos seu Feedback!</span>
+    </> 
+  );
+};
 export default FeedbackSuccess;
