@@ -1,7 +1,9 @@
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 import { theme } from "./src/theme";
-import { Widget } from "./src/components/Widget";
+import Widget from "./src/components/Widget";
 import {
   useFonts,
   Inter_400Regular,
@@ -19,14 +21,15 @@ export default function App() {
     return <AppLoading />;
   }
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: theme.colors.background,
-      }}
-    >
-      <Widget />
-      <StatusBar style="light" backgroundColor="transparent" translucent />
-    </View>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: theme.colors.background,
+        }}
+      >
+        <StatusBar style="light" backgroundColor="transparent" translucent />
+
+        <Widget />
+      </View>
   );
 }
