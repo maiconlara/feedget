@@ -28,4 +28,19 @@ export const styles = StyleSheet.create({
     color: theme.colors.text_primary,
     fontFamily: theme.fonts.medium
   },
+  input: {
+    height: 112,
+    width: '100%',
+    padding: 12,
+    marginBottom: 8,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: theme.colors.stroke,
+    color: theme.colors.text_primary,
+    fontFamily: theme.fonts.regular,
+  },
+  footer: {
+    flexDirection: 'row',
+    marginBottom: 16,
+  }
 });
